@@ -7,7 +7,7 @@
 }
 
 .d-none {
-  display: none;
+  display: none !important;
 }
 
 .button {
@@ -18,8 +18,8 @@
   font-weight: 700;
   line-height: 1;
   color: $theme-white;
-  background-color: $theme-btn-prime;
-  border: 1px solid $theme-btn-prime;
+  background-color: $theme-purple;
+  border: 1px solid $theme-purple;
   border-radius: 5px;
   text-decoration: none;
   min-height: 38px;
@@ -28,20 +28,28 @@
   transition: all 0.2s ease-in-out;
   transition-property: background, border;
 
+  &:visited {
+    color: $theme-white;
+  }
+
   &:hover {
-    color: $theme-btn-prime;
+    color: $theme-purple;
     background-color: $theme-white;
   }
 }
 
 .button-secondary {
-  color: #112235;
+  color: $theme-black;
   background-color: $theme-white;
-  border-color: $theme-btn-prime;
+  border-color: $theme-purple;
   text-shadow: 1px 4px 6px rgba(17,34,53,.35);
 
+  &:visited {
+    color: $theme-black;
+  }
+
   &:hover {
-    color: $theme-btn-prime;
+    color: $theme-purple;
   }
 }
 

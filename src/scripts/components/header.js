@@ -34,9 +34,11 @@
       // Show dropdown element by data attribute. Hide previously active
       $menuDropdown.find('[data-drop]').each(function (i, el) {
         if (el.dataset && el.dataset.drop && el.dataset.drop === dropID) {
-          el.style.display = 'block'
+          // el.style.display = 'inherit'
+          el.classList.remove('d-none');
         } else {
-          el.style.display = 'none'
+          el.classList.add('d-none');
+          // el.style.display = 'none'
         }
       })
     })
@@ -47,6 +49,11 @@
       if (e.target.contains(menuDropdown) && e.target !== menuDropdown) {
         document.body.classList.remove('blured');
         $menuDropdown.addClass('d-none')
+
+        // Highlight active menu item.
+        $menuItems.find('[data-drop]').each(function(i, el) {
+          el.classList.remove('mainMenu_active');
+        })
       }
     }
   }

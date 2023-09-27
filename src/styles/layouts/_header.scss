@@ -20,7 +20,6 @@ header {
     padding: 1.5rem 1.75rem;
   }
 
-
   nav {
     ul {
       display: flex;
@@ -106,21 +105,114 @@ header {
     top: calc(100% - 5px);
     left: 0;
     right: 0;
-    height: 400px;
     background-color: $theme-white;
-    padding: 0 1.75rem 2.188rem 1.75rem;
+    //padding: 0 1.75rem 0 1.75rem;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 
     hr {
       background-color: #EAE8E4;
       margin-top: 0;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0;
     }
+  }
+
+  &_dropdownTitle {
+    display: inline-flex;
+    align-items: center;
+    font-size: .875rem;
+    font-weight: 600;
+    color: $theme-purple;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      background-color: $theme-purple;
+      width: 16px;
+      height: 1px;
+      margin-right: 6px;
+    }
+  }
+
+  &_dropdownItem {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &_dropdownMain {
+    display: flex;
+    width: 67.3%;
+    column-gap: 2.125rem;
+    padding: 1.5rem 1.75rem 2.188rem 1.75rem;
+  }
+
+  &_dropdownSide {
+    width: 32.7%;
+    background-color: $theme-gray;
+    padding: 1.5rem 2.375rem 2.188rem;
   }
 }
 
 
+.menuSubitems {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.menuSubitem {
+  display: flex;
+  column-gap: 1rem;
+  margin-top: 1.5rem;
+
+  &_img {
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &_body {
+    width: 100%;
+    max-width: 338px;
+  }
+
+  &_title {
+    font-family: $font-secondary;
+    font-size: 1.125rem;
+    color: $theme-black;
+  }
+
+  &_content {
+    color: $theme-text2;
+    font-size: .875rem;
+
+    p {
+      margin-top: .5rem;
+      margin-bottom: .25rem;
+    }
+  }
+
+  &_category {
+    font-size: .75rem;
+
+    span {
+      color: $theme-black;
+      margin-right: .375rem;
+    }
+
+    a {
+      color: $theme-purple;
+      text-decoration: none;
+      background-color: #6F7BD41A;
+      padding: .25rem;
+
+      &:not(:last-child) {
+        margin-right: .375rem;
+      }
+    }
+  }
+}
 
 
 
