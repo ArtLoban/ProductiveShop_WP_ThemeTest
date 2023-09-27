@@ -1,0 +1,16 @@
+{
+  "name": "productiveshop",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp-wp",
+    "build": "gulp-wp build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gulp-wp": "^0.6.3"
+  }
+}

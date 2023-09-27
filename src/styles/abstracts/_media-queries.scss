@@ -1,0 +1,66 @@
+
+/*** `Mobile First` approach ***/
+
+// Fore devices with width 425px and more
+@mixin moreThen425px {
+	@media only screen and (min-width: 425px)
+	{
+		@content;
+	}
+}
+
+// Fore devices with width 576px and more
+@mixin moreThen576px {
+	@media only screen and (min-width: 576px)
+	{
+		@content;
+	}
+}
+
+// Fore devices with width 768px and more
+@mixin moreThen768px {
+	@media only screen and (min-width: 768px)
+	{
+		@content;
+	}
+}
+
+// Fore devices with width 992px and more
+@mixin moreThen992px {
+  @media only screen and (min-width: 992px)
+  {
+    @content;
+  }
+}
+
+// Fore devices with width 1100px and more
+@mixin moreThen1100px {
+	@media only screen and (min-width: 1100px)
+	{
+		@content;
+	}
+}
+
+// Fore devices with width 1200px and more
+@mixin moreThen1200px {
+	@media only screen and (min-width: 1200px)
+	{
+		@content;
+	}
+}
+
+/*** `Desktop First` approach ***/
+// Fore devices with width 991px and less
+@mixin lessThen991px {
+  @media only screen and (max-width: 991px)
+  {
+    @content;
+  }
+}
+
+@mixin lessThen768px {
+	@media only screen and (max-width: 767.98px)
+	{
+		@content;
+	}
+}
