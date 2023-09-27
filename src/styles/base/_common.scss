@@ -1,0 +1,60 @@
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1324px;
+  padding: 0 .75rem;
+  margin: 0 auto;
+}
+
+.d-none {
+  display: none;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: .875rem;
+  font-weight: 700;
+  line-height: 1;
+  color: $theme-white;
+  background-color: $theme-btn-prime;
+  border: 1px solid $theme-btn-prime;
+  border-radius: 5px;
+  text-decoration: none;
+  min-height: 38px;
+  padding: .625rem 1.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  transition-property: background, border;
+
+  &:hover {
+    color: $theme-btn-prime;
+    background-color: $theme-white;
+  }
+}
+
+.button-secondary {
+  color: #112235;
+  background-color: $theme-white;
+  border-color: $theme-btn-prime;
+  text-shadow: 1px 4px 6px rgba(17,34,53,.35);
+
+  &:hover {
+    color: $theme-btn-prime;
+  }
+}
+
+.blured {
+  &::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 192, 203, 0.17);
+    backdrop-filter: blur(10px);
+
+  }
+}
