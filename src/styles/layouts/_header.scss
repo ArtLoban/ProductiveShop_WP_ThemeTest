@@ -203,6 +203,15 @@ header {
     font-family: $font-secondary;
     font-size: 1.125rem;
     color: $theme-black;
+    text-decoration: none;
+
+    &:visited {
+      color: $theme-black;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   &_content {

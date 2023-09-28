@@ -75,13 +75,19 @@ $menu_items = (isset($fields['header_menu_items']) && is_array($fields['header_m
                                         <?php if (is_array($item['column_1_items']) && count($item['column_1_items'])) { ?>
                                             <div class="menuSubitems">
                                                 <?php foreach($item['column_1_items'] as $column_item) {
-                                                    ?>
+                                                    $title = (is_array($column_item['title'])) ? $column_item['title'] : [];
+                                                    $url = isset($title['url']) ? $title['url'] : '#';
+                                                    $title = isset($title['title']) ? $title['title'] : '';
+                                                    $link_target = isset($title['target']) ? $title['target'] : '_self';
+                                                ?>
                                                     <div class="menuSubitem">
                                                         <div class="menuSubitem_img">
                                                             <img src="<?= esc_attr($column_item['icon']) ?>"  width="32" height="32" alt="icon">
                                                         </div>
                                                         <div class="menuSubitem_body">
-                                                            <span class="menuSubitem_title"><?= esc_html($column_item['title']) ?></span>
+                                                            <a class="menuSubitem_title" href="<?= esc_url($url) ?>" target="<?= esc_attr($link_target) ?>">
+                                                                <?= esc_html($title) ?>
+                                                            </a>
                                                             <div class="menuSubitem_content"><?= $column_item['content'] ?></div>
                                                             <?php if (is_array($column_item['categories']) && count($column_item['categories'])) { ?>
                                                                 <div class="menuSubitem_category">
@@ -112,13 +118,20 @@ $menu_items = (isset($fields['header_menu_items']) && is_array($fields['header_m
 
                                         <?php if (is_array($item['column_2_items']) && count($item['column_2_items'])) { ?>
                                             <div class="menuSubitems">
-                                                <?php foreach($item['column_2_items'] as $column_item) { ?>
+                                                <?php foreach($item['column_2_items'] as $column_item) {
+                                                    $title = (is_array($column_item['title'])) ? $column_item['title'] : [];
+                                                    $url = isset($title['url']) ? $title['url'] : '#';
+                                                    $title = isset($title['title']) ? $title['title'] : '';
+                                                    $link_target = isset($title['target']) ? $title['target'] : '_self';
+                                                ?>
                                                     <div class="menuSubitem">
                                                         <div class="menuSubitem_img">
                                                             <img src="<?= esc_attr($column_item['icon']) ?>"  width="32" height="32" alt="icon">
                                                         </div>
                                                         <div class="menuSubitem_body">
-                                                            <span class="menuSubitem_title"><?= esc_html($column_item['title']) ?></span>
+                                                            <a class="menuSubitem_title" href="<?= esc_url($url) ?>" target="<?= esc_attr($link_target) ?>">
+                                                                <?= esc_html($title) ?>
+                                                            </a>
                                                             <div class="menuSubitem_content"><?= $column_item['content'] ?></div>
                                                             <?php if (is_array($column_item['categories']) && count($column_item['categories'])) { ?>
                                                                 <div class="menuSubitem_category">
