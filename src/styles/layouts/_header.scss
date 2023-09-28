@@ -224,10 +224,13 @@ header {
     }
 
     a {
+      display: inline-block;
       color: $theme-purple;
+      line-height: 1.25rem;
       text-decoration: none;
-      background-color: #6F7BD41A;
-      padding: .25rem;
+      background-color: #ebecf4;
+      border-radius: 5px;
+      padding: 0 .25rem;
 
       &:not(:last-child) {
         margin-right: .375rem;

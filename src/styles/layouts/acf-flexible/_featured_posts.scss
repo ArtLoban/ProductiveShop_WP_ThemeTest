@@ -62,7 +62,9 @@
     row-gap: .525rem;
 
     a {
+      display: inline-block;
       font-size: .75rem;
+      line-height: 1.25rem;
       color: $theme-purple;
       background-color: #ebecf4;
       text-decoration: none;
