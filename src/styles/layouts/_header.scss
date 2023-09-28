@@ -144,6 +144,16 @@ header {
     width: 67.3%;
     column-gap: 2.125rem;
     padding: 1.5rem 1.75rem 2.188rem 1.75rem;
+
+    //& > div:not(:first-child) {
+    //  width: 50%;
+    //}
+
+    & > div {
+      flex-grow: 1;
+      //width: 50%;
+    }
+
   }
 
   &_dropdownSide {
@@ -166,6 +176,8 @@ header {
   margin-top: 1.5rem;
 
   &_img {
+    flex-shrink: 0;
+
     img {
       width: 32px;
       height: 32px;
