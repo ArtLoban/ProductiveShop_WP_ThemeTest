@@ -1,0 +1,21 @@
+.caseStudy {
+  &_title {
+    font-family: $font-secondary;
+    font-size: 1.125rem;
+    color: $theme-black;
+  }
+
+  &_content {
+    color: $theme-text2;
+    font-size: .875rem;
+
+    p {
+      margin-top: .5rem;
+      margin-bottom: .25rem;
+    }
+  }
+
+  &_action {
+    margin-top: 3.125rem;
+  }
+}

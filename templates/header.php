@@ -64,19 +64,25 @@ $menu_items = (isset($fields['header_menu_items']) && is_array($fields['header_m
 
                         $show_column_1 = (boolean) $item['show_column_1'];
                         $show_column_2 = (boolean) $item['show_column_2'];
-//                        ___debug_print($item)
+
+                        $side_title = (isset($item['side_title']) && !empty($item['side_title'])) ? $item['side_title'] : false;
+                        $side_image_url = (isset($item['side_image']) && !empty($item['side_image'])) ? $item['side_image'] : false;
+
+                        $side_flexible_content	= $item['side_flexible_content'];
+//                        ___debug_print($side_flexible_content)
                     ?>
-                        <div class="mainMenu_dropdownItem" <?= $data_attr ?>>
+                        <div class="mainMenu_dropdownItem d-none" <?= $data_attr ?>>
                             <div class="mainMenu_dropdownMain">
                                 <?php if ($show_column_1) { ?>
                                     <div>
-                                        <span class="mainMenu_dropdownTitle"><?= esc_html($item['column_1_title']) ?></span>
+                                        <?php if ($item['column_1_title']) { ?>
+                                            <span class="mainMenu_dropdownTitle"><?= esc_html($item['column_1_title']) ?></span>
+                                        <?php } ?>
 
                                         <?php if (is_array($item['column_1_items']) && count($item['column_1_items'])) { ?>
                                             <div class="menuSubitems">
                                                 <?php foreach($item['column_1_items'] as $column_item) {
-//                                                    ___debug_print($column_item)
-                                                ?>
+                                                    ?>
                                                     <div class="menuSubitem">
                                                         <div class="menuSubitem_img">
                                                             <img src="<?= esc_attr($column_item['icon']) ?>"  width="32" height="32" alt="icon">
@@ -90,7 +96,7 @@ $menu_items = (isset($fields['header_menu_items']) && is_array($fields['header_m
                                                                     <?php foreach ($column_item['categories'] as $cat_item) {
                                                                         $category = (is_array($cat_item['category']) && count($cat_item['category'])) ? $cat_item['category'] : [];
                                                                         $link_target = $category['target'] ? $category['target'] : '_self';
-                                                                    ?>
+                                                                        ?>
                                                                         <a href="<?= esc_attr($category['url'])?>" target="<?= esc_attr($link_target) ?>">
                                                                             <?= esc_html($category['title'])?>
                                                                         </a>
@@ -107,7 +113,9 @@ $menu_items = (isset($fields['header_menu_items']) && is_array($fields['header_m
 
                                 <?php if ($show_column_2) { ?>
                                     <div>
-                                        <span class="mainMenu_dropdownTitle"><?= esc_html($item['column_2_title']) ?></span>
+                                        <?php if ($item['column_2_title']) { ?>
+                                            <span class="mainMenu_dropdownTitle"><?= esc_html($item['column_2_title']) ?></span>
+                                        <?php } ?>
 
                                         <?php if (is_array($item['column_2_items']) && count($item['column_2_items'])) { ?>
                                             <div class="menuSubitems">
@@ -142,21 +150,19 @@ $menu_items = (isset($fields['header_menu_items']) && is_array($fields['header_m
                                     </div>
                                 <?php } ?>
                             </div>
+
                             <div class="mainMenu_dropdownSide">
                                 <div>
-                                    <span class="mainMenu_dropdownTitle">Case study</span>
-                                    <div class="menuSubitem">
-                                        <div class="menuSubitem_body">
-                                            <span class="menuSubitem_title">Another Happy Client. Shocking.</span>
-                                            <div class="menuSubitem_content">
-                                                <p>Average CTR rate went up <strong>by 2.3%</strong></p>
-                                                <p>New users traffic increased <strong>by 15.26%</strong></p>
-                                                <p>Average session duration 53.63%</p>
-                                            </div>
-                                            <a href="#" class="button" role="button">Read the story</a>
-                                        </div>
-                                    </div>
+                                    <?php if ($side_title) { ?>
+                                        <span class="mainMenu_dropdownTitle"><?= esc_html($side_title) ?></span>
+                                    <?php } ?>
+                                    <?php ps_get_acf_flexible_content_template($side_flexible_content) ?>
                                 </div>
+                                <?php if ($side_image_url) { ?>
+                                    <div class="mainMenu_dropdownSideImg">
+                                        <img src="<?= esc_attr($side_image_url) ?>" alt="background image">
+                                    </div>
+                                <?php } ?>
                             </div>
                         </div>
                     <?php } ?>
