@@ -1,16 +1,11 @@
 <?php
-
 $fields	= get_fields('option');
-
 //___debug_print($fields);
 
 $site_logo_id = (isset($fields['header_site_logo']) && !empty($fields['header_site_logo'])) ? $fields['header_site_logo'] : false;
 $action_button = (isset($fields['header_action_button']) && is_array($fields['header_action_button'])) ? $fields['header_action_button'] : false;
 $menu_items = (isset($fields['header_menu_items']) && is_array($fields['header_menu_items'])) ? $fields['header_menu_items'] : false;
-
-//___debug_print($menu_items);
 ?>
-
 <header>
     <div class="container">
         <div class="mainMenu">
@@ -56,7 +51,6 @@ $menu_items = (isset($fields['header_menu_items']) && is_array($fields['header_m
             <?php if (is_array($menu_items) && count($menu_items)) { ?>
                 <div id="menuDropdown" class="mainMenu_dropdown d-none">
                     <hr>
-
                     <?php foreach ($menu_items as $key => $item) {
                         $menu_item = is_array($item['menu_item']) ? $item['menu_item'] : false;
                         $is_parent_class = $item['has_submenu'] ? 'mainMenu_parent' : '';
@@ -69,7 +63,6 @@ $menu_items = (isset($fields['header_menu_items']) && is_array($fields['header_m
                         $side_image_url = (isset($item['side_image']) && !empty($item['side_image'])) ? $item['side_image'] : false;
 
                         $side_flexible_content	= $item['side_flexible_content'];
-//                        ___debug_print($side_flexible_content)
                     ?>
                         <div class="mainMenu_dropdownItem d-none" <?= $data_attr ?>>
                             <div class="mainMenu_dropdownMain">
@@ -119,9 +112,7 @@ $menu_items = (isset($fields['header_menu_items']) && is_array($fields['header_m
 
                                         <?php if (is_array($item['column_2_items']) && count($item['column_2_items'])) { ?>
                                             <div class="menuSubitems">
-                                                <?php foreach($item['column_2_items'] as $column_item) {
-//                                                    ___debug_print($column_item)
-                                                    ?>
+                                                <?php foreach($item['column_2_items'] as $column_item) { ?>
                                                     <div class="menuSubitem">
                                                         <div class="menuSubitem_img">
                                                             <img src="<?= esc_attr($column_item['icon']) ?>"  width="32" height="32" alt="icon">

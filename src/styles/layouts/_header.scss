@@ -156,7 +156,7 @@ header {
     position: relative;
     width: 32.7%;
     background-color: $theme-gray;
-    padding: 0 2.375rem 2.188rem 1.5rem;
+    padding: 0 2.5rem 2.188rem 2.5rem;
     z-index: 1;
 
     .mainMenu_dropdownTitle {
@@ -184,10 +184,6 @@ header {
   display: flex;
   column-gap: 1rem;
   margin-top: 1.5rem;
-
-  //&:not(:first-child) {
-  //  margin-top: 1.5rem;
-  //}
 
   &_img {
     flex-shrink: 0;
@@ -239,14 +235,3 @@ header {
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-

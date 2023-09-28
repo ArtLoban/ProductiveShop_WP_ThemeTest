@@ -1,0 +1,42 @@
+.socials {
+  padding-top: 1.5rem;
+
+  &_title {
+    font-family: $font-secondary;
+    font-size: 1.125rem;
+    color: $theme-black;
+  }
+
+  &_items {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1.5rem;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      font-size: .875rem;
+      color: $theme-text2;
+      text-decoration: none;
+      width: fit-content;
+
+      &:not(:last-child) {
+        padding-bottom: 1rem;
+      }
+
+      &:hover .socials_icon {
+        transform: scale(0.95);
+      }
+    }
+  }
+
+  &_icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    margin-right: 1rem;
+    transition: transform .4s ease;
+  }
+}
